@@ -302,11 +302,80 @@ Creating views and view logic
 
 
 
-
-
-
-
 # Module 2
 ## Views
 A view is a function design to handle a web request. And return a web response. Such a HTML document.
 We use them to process HTTP requests and return HTTP responses
+
+
+<!-- 11/14/2023
+Http requests
+Request and response objetcts
+Understangind Urls
+ -->
+
+## Http Requests and Response
+Http is a core operational protocol of the worl wide web. It is what eneables your web browser to comunicate with a web server that host a website. (Hyper text transfer protocol).
+It is a request, response based protocol.
+
+### Http Request
+An http request has a method, URL, version and headers.
+![alt text]({384BB173-5B70-4C7E-87AC-A60C58030D61}.png)
+
+Most commom methods are:
+* GET
+* PUT
+* POST
+* DELETE
+
+The path is where the content is located on the server. 
+
+And the headers contain information such as:
+* Server name
+* Server port
+* Request method
+* Content type
+
+### Http Response
+They follow a request similar to the request.
+![alt text]({B35AF417-D43F-4951-B2C1-93156C04A876}.png)
+
+Optionally it contains a message body, consisting in the response content such as HTML file. 
+
+![alt text]({3A9C592C-C6CB-4A03-ABA2-3DB5ADC95B06}.png)
+
+#### Http Status Codes
+Contained within the header, indicate if the HTTP request successfully completed
+The codes are in the range from 100-599 and are group with pourpuse. 
+
+![alt text]({82F7378C-3690-451D-86F6-149E5F036826}.png)
+
+
+And the status message is the text representation of the status code.
+![alt text]({0316AA70-E7C7-4098-8403-8AAC1C4D9282}.png)
+
+### Https
+Is the secure version of http. It is used to send secure information between two computer so that nobody else can see what is sent and receive.
+It does this by somethin called encription. 
+The request and response has the same info, but the diference is that the content before is sent it is turned into a secret code. And only the other computer can turn the secret code into the original content.  
+
+[Http Response and request objects in Django Lecture](https://www.coursera.org/learn/django-web-framework/supplement/DMTe5/request-and-response-objects)
+
+
+## URL
+Every single resource on the web is located by an address known as the uniform resource locator or URL.
+
+![URL]({FD63786F-3731-4BB6-8CD3-0B014824396F}.png)
+
+* Scheme: is the protocol and is always at the beggining of the URL.
+* Subdomian: located before the domain, usually contents the home page and other important pages, the most common is www (Worl wide web).
+* Domain
+  * Second-level domain
+    * Refers to an organization or the name of a company
+  * Top-level domain
+    * Second part of the domain 
+    * Used to reference a country or category of your organization
+* File Path
+  * Redirects you to a location of a resource
+* Parameters
+  * Also knwon as query strings, and are use to add additional information inside a URL
