@@ -28,3 +28,34 @@ def home(request):
 
     """
     return HttpResponse(msg, content_type='text/html', charset='utf-8')
+
+def pathview(request, name, id):
+    return HttpResponse("Name: {} User Id:{}".format(name, id))
+
+
+def qryview(request):
+    name = request.GET['name']
+    id = request.GET['id']
+    return HttpResponse("Name: {}, UserId: {}".format(name, id))
+
+
+def showform(request):
+    return render(request, "apptest/form.html")
+
+
+def getform(request):
+    if request.method == "POST":
+        id=request.POST['id']
+        name=request.POST['name']
+    return HttpResponse("Name: {}, UserId:{}".format(name,id))
+
+def menuitems(request,dish):
+    items = {
+        'pasta': 'Pasta is a type of noodle',
+        'falafel': 'Falafel are a deep fried patties',
+        'cheesecake': 'Cheese cake is a cake'
+    }
+
+    description = items[dish]
+
+    return HttpResponse(f"<h2>{dish}</h2>" + description)
